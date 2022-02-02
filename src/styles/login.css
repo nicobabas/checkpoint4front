@@ -1,0 +1,29 @@
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../assets/images/backgroun2.jpeg");
+    height: 80vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:  cover;
+    }
+
+    .login_form{
+        margin-left: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login_h2{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .login_email{
+        margin-bottom: 10px;
+    }
+    .login_button{
+        background-color: rgb(255, 255, 255, 0.6);
+    }

@@ -1,0 +1,18 @@
+.mycompte{
+display: flex;
+justify-content: space-around;
+background-image: url("../assets/images/backgroun2.jpeg");
+height: 80vh;
+background-position: center;
+background-repeat: no-repeat;
+background-size:  cover;
+}
+.mycompte_choice{
+    display: flex;
+    justify-content: space-between;
+    height: 6rem;
+}
+.mycompte_button{
+    margin-top: 40px;
+    background-color: rgb(255, 255, 255, 0.6);
+}

@@ -1,0 +1,36 @@
+.search {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.searchInputs {
+  margin-top: 50px;
+  display: flex;
+}
+
+.search input {
+  background-color: #b5c9fd;
+  font-family: 'calling_coderegular';
+
+  border: 0;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 15px;
+  height: 30px;
+  width: 350px;
+}
+
+.search ::placeholder {
+  color: white;
+  font-family: 'calling_coderegular';
+}
+
+.suggestion {
+  cursor: pointer;
+}
+
+.suggestion:hover {
+  background-color: #b5c9fd;
+}

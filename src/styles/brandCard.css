@@ -1,0 +1,11 @@
+.brandcard {
+  font-family: 'Roboto Medium';
+  font-size: large;
+}
+.brandcard img {
+  object-fit: cover;
+  object-position: 82% 0%;
+}
+.brandcard span {
+  
+}
