@@ -27,12 +27,12 @@ const Header = () => {
                   <li>
                     <Link to="/mesbooks">Mes souvenirs</Link>
                   </li>
+                  <li>
+                    <Link to="/creationbook">Créer un livre</Link>
+                  </li>
                 </div>
               ) : null}
 
-              <li>
-                <Link to="/creationbook">créer son book</Link>
-              </li>
               {token ? (
                 <div className="flex flex-row">
                   <li className="text-black ml-2" onClick={() => logout()}>

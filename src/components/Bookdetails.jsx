@@ -27,11 +27,12 @@ const Bookdetails = () => {
     });
   };
   console.log(pages);
-  const handleSubmit = () => {
+  const deletePage = (page_id) => {
     axios
-      .delete(`http://localhost:8000/addpage/${pages.id}`)
+      .delete(`http://localhost:8000/addpage/${page_id}`)
       .then((response) => {
         setPages(response.data);
+        window.location.reload();
       });
   };
 
@@ -57,7 +58,7 @@ const Bookdetails = () => {
           <div key={page.id} className="book_globaldiv">
             <div key={page.id} className="book_image_div">
               <img className="book_image" src={page.image} alt={page.id} />
-              <button onClick={handleSubmit}>Supprimer</button>
+              <button onClick={() => deletePage(page.id)}>Supprimer</button>
             </div>
           </div>
         ))}

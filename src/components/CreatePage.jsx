@@ -107,7 +107,7 @@ const CreatePage = () => {
                   <button
                     type="submit"
                     value="Send"
-                    className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 "
+                    className="flex border-4 py-2 px-6 focus:outline-none rounded-full hover:bg-white btn btn-warning"
                   >
                     Enregistrer
                   </button>
