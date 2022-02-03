@@ -3,6 +3,14 @@ import logo from '../assets/images/logo.png';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+  const token = localStorage.getItem('token');
+  console.log(token);
+
+  const logout = () => {
+    localStorage.clear();
+    window.location.href = '/';
+  };
+
   return (
     <>
       <header>
@@ -14,15 +22,28 @@ const Header = () => {
           </div>
           <div>
             <ul>
-              <li>
-                <Link to="/participate">Mes souvenirs</Link>
-              </li>
+              {token ? (
+                <div className="flex flex-row">
+                  <li>
+                    <Link to="/mesbooks">Mes souvenirs</Link>
+                  </li>
+                </div>
+              ) : null}
+
               <li>
                 <Link to="/creationbook">créer son book</Link>
               </li>
-              <li>
-                <Link to="/moncompte">Mon compte</Link>
-              </li>
+              {token ? (
+                <div className="flex flex-row">
+                  <li className="text-black ml-2" onClick={() => logout()}>
+                    DECONNEXION
+                  </li>
+                </div>
+              ) : (
+                <Link to="/moncompte">
+                  <li className="liMenu">MON COMPTE</li>
+                </Link>
+              )}
             </ul>
           </div>
         </nav>

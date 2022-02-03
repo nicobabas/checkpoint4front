@@ -5,25 +5,26 @@ const CreatePage = () => {
   const [image, setImage] = useState(null);
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
-  const [book_id, setBook_id] = useState(1);
+  const [book_id, setBook_id] = useState('3');
   const [error, setError] = useState('');
 
   const formData = new FormData();
   const config = {
     headers: { 'content-type': 'multipart/form-data' },
   };
-
+  console.log(image);
   const handleImage = (e) => {
     setImage(e.target.files[0]);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (image && title && text && book_id) {
+    console.log(image);
+    if (image || title || text || book_id) {
       formData.append('image', image);
       formData.append('title', title);
       formData.append('text', text);
-      formData.append('user', book_id);
+      formData.append('book_id', book_id);
 
       axios
         .post('http://localhost:8000/addpage', formData, config)
@@ -41,7 +42,7 @@ const CreatePage = () => {
     } else setError('Tous les champs sont requis');
   };
   return (
-    <div className="createweartype">
+    <div className="createpage">
       <div className="px-5 py-5 md:grid md:grid-cols-3 md:gap-6">
         <div className="mt-5 md:mt-0 md:col-span-2">
           <form onSubmit={handleSubmit}>
@@ -100,10 +101,10 @@ const CreatePage = () => {
                     name="name"
                     id="name"
                     className="mt-3 border border-gray-300 px-2 py-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                    onChange={(e) => setTitle(e.target.value)}
+                    onChange={(e) => setText(e.target.value)}
                   />
                 </div>
-                <div className="px-5 py-5 bg-white text-right sm:px-6">
+                <div>
                   <button
                     type="submit"
                     value="Send"

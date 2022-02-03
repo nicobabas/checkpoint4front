@@ -1,0 +1,11 @@
+.mybook_card{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 5px;
+}
+.mybook_button{
+    display: flex;
+    justify-content: center;
+}

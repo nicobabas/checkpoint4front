@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { NavLink as Link } from 'react-router-dom';
 import '../styles/login.css';
 
 const url = 'http://localhost:8000/security/login';
@@ -59,14 +58,13 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <Link to={`/`}>
-          <button
-            type="submit"
-            className="login_button flex border-4 py-2 px-6 focus:outline-none rounded-full hover:bg-white btn btn-warning"
-          >
-            Valider
-          </button>
-        </Link>
+
+        <button
+          type="submit"
+          className="login_button flex border-4 py-2 px-6 focus:outline-none rounded-full hover:bg-white btn btn-warning"
+        >
+          Valider
+        </button>
       </form>
     </div>
   );
