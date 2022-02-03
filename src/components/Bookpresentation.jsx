@@ -23,12 +23,12 @@ const Bookpresentation = () => {
   }, []);
 
   useEffect(() => {
-    if (widthScreen < 600) {
+    if (widthScreen < 700) {
       setWidth(400);
       setHeight(300);
     } else {
-      setWidth(Math.ceil((0.9 * widthScreen) / 2));
-      setHeight(Math.ceil((0.6 * widthScreen) / 2));
+      setWidth(Math.ceil((0.9 * widthScreen) / 2.5));
+      setHeight(Math.ceil((0.6 * widthScreen) / 2.5));
     }
   }, [widthScreen]);
 

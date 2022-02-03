@@ -22,7 +22,7 @@ const CreateBook = () => {
       formData.append('name', name);
 
       axios
-        .post(`http://localhost:8000/book`, formData, config)
+        .post(`http://localhost:8000/books`, formData, config)
         .then(({ data }) => {
           if (data.error) setError(data.error);
           else {

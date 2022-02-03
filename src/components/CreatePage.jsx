@@ -48,10 +48,10 @@ const CreatePage = () => {
             {error && <p className="register-error">{error}</p>}
             <div className="shadow sm:rounded-md sm:overflow-hidden">
               <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
-                <div className="col-span-6 sm:col-span-6 lg:col-span-2">
-                  <h2 className="mb-5 text-lg font-medium leading-6 text-gray-900">
-                    Créer sa page
-                  </h2>
+                <h2 className="mb-5 text-lg font-medium leading-6 text-gray-900">
+                  Télécharger une image
+                </h2>
+                <div className="hidden col-span-6 sm:col-span-6 lg:col-span-2">
                   <label
                     htmlFor="name"
                     className="block text-sm font-medium font-bold text-gray-700"
@@ -85,10 +85,7 @@ const CreatePage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-span-6 sm:col-span-6 lg:col-span-2">
-                  <h2 className="mb-5 text-lg font-medium leading-6 text-gray-900">
-                    Créer sa page
-                  </h2>
+                <div className="hidden col-span-6 sm:col-span-6 lg:col-span-2">
                   <label
                     htmlFor="name"
                     className="block text-sm font-medium font-bold text-gray-700"
