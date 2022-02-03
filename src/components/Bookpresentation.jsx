@@ -55,36 +55,34 @@ const Bookpresentation = () => {
   };
 
   return (
-    <div>
-      <div className="book_flex" style={{ padding: '50px 0' }}>
-        <span
-          onClick={() => book.current.pageFlip().flipNext()}
-          className={'next button'}
-        >
-          <i className="fas fa-chevron-right"></i>
-        </span>
-        <HTMLFlipBook
-          onFlip={updatePage}
-          width={width}
-          height={height}
-          ref={book}
-        >
-          {pages?.map((page) => (
-            <div className="page" key={page.id}>
-              <img src={page.image} alt={page.id} />
-            </div>
-          ))}
-        </HTMLFlipBook>
-        <span
-          onClick={() => book.current.pageFlip().flipPrev()}
-          className={'previous button'}
-        >
-          <i className="fas fa-chevron-left"></i>
-        </span>
-        <span className="info-page">
-          {page} - {total}
-        </span>
-      </div>
+    <div className="book_flex" style={{ padding: '50px 0' }}>
+      <span
+        onClick={() => book.current.pageFlip().flipNext()}
+        className={'next button'}
+      >
+        <i className="fas fa-chevron-right"></i>
+      </span>
+      <HTMLFlipBook
+        onFlip={updatePage}
+        width={width}
+        height={height}
+        ref={book}
+      >
+        {pages?.map((page) => (
+          <div className="page" key={page.id}>
+            <img src={page.image} alt={page.id} />
+          </div>
+        ))}
+      </HTMLFlipBook>
+      <span
+        onClick={() => book.current.pageFlip().flipPrev()}
+        className={'previous button'}
+      >
+        <i className="fas fa-chevron-left"></i>
+      </span>
+      <span className="info-page">
+        {page} - {total}
+      </span>
     </div>
   );
 };

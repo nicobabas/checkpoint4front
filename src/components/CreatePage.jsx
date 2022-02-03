@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 const CreatePage = () => {
+  const params = useParams();
   const [image, setImage] = useState(null);
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
-  const [book_id, setBook_id] = useState('3');
   const [error, setError] = useState('');
 
   const formData = new FormData();
@@ -16,18 +17,16 @@ const CreatePage = () => {
   const handleImage = (e) => {
     setImage(e.target.files[0]);
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(image);
-    if (image || title || text || book_id) {
+    if (image || title || text) {
       formData.append('image', image);
       formData.append('title', title);
       formData.append('text', text);
-      formData.append('book_id', book_id);
 
       axios
-        .post('http://localhost:8000/addpage', formData, config)
+        .post(`http://localhost:8000/addpage/${params.id}`, formData, config)
         .then(({ data }) => {
           if (data.error) setError(data.error);
           else {
@@ -35,12 +34,12 @@ const CreatePage = () => {
             setImage('');
             setTitle('');
             setText('');
-            setBook_id('');
           }
         })
         .then(() => window.location.reload());
     } else setError('Tous les champs sont requis');
   };
+  console.log(params.id);
   return (
     <div className="createpage">
       <div className="px-5 py-5 md:grid md:grid-cols-3 md:gap-6">

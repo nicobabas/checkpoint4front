@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import BooksCard from './BooksCard';
+import { Link } from 'react-router-dom';
 import '../styles/mybooks.css';
 
 const MyBooks = () => {
@@ -35,12 +36,14 @@ const MyBooks = () => {
           <div className="mybook_div" key={book.id}>
             <BooksCard book={book} />
             <div className="mybook_button">
-              <button
-                type="button"
-                className="mybook_button mt-2 flex place-content-center border-4 py-2 px-6 focus:outline-none rounded-full hover:bg-white"
-              >
-                Voir
-              </button>
+              <Link to={`/mesbooks/${book.id}`}>
+                <button
+                  type="button"
+                  className="mybook_button mt-2 flex place-content-center border-4 py-2 px-6 focus:outline-none rounded-full hover:bg-white"
+                >
+                  Voir
+                </button>
+              </Link>
             </div>
             <div className="mybook_button">
               <button
